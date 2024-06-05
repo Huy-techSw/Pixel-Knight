@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     bool lookingLeft;
     public bool isDead;
 
-    public float customSpeed = 50f;
+    public float customSpeed = 30f;
 
     void Awake()
     {
