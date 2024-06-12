@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using TMPro;
 
 public class Api : MonoBehaviour
 {
     private string url = "http://localhost:8080/api/pru/word/THREE";
 
+
     public Text keyText;
-	void Start()
+
+    void Start()
     {
         StartCoroutine(GetWord());
+
     }
 
     IEnumerator GetWord()
@@ -19,7 +23,7 @@ public class Api : MonoBehaviour
         using (UnityWebRequest request = UnityWebRequest.Get(url))
         {
             yield return request.SendWebRequest();
-            if(request.result == UnityWebRequest.Result.ConnectionError)
+            if (request.result == UnityWebRequest.Result.ConnectionError)
             {
                 Debug.LogError(request.error);
             }
@@ -34,5 +38,8 @@ public class Api : MonoBehaviour
 
     }
 
- 
+
+   
+
+
 }
